@@ -1,0 +1,83 @@
+/* 選單樣式 */
+.menu {
+  position: absolute;
+  top: -50px; /* 初始隱藏選單 */
+  right: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  z-index: 3; /* 選單在最上層 */
+  opacity: 0; /* 初始透明度為 0 */
+  transition: top 0.5s ease, opacity 0.5s ease; /* 滑入滑出效果 */
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #e0e0e0;
+}
+
+/* 子選單樣式 */
+.submenu-items {
+  display: flex; /* 子選單文字顯示在同一行 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 3;
+  gap: 10px; /* 子選單項目之間的間距 */
+}
+
+.submenu:hover .submenu-items {
+  display: flex; /* 保持子選單顯示 */
+}
+
+.submenu-items li {
+  padding: 5px 10px;
+}
+
+.submenu-items a {
+  font-size: 16px;
+}
+
+/* iframe 樣式 */
+#iframe-display {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.2); /* 背景透明度 0.2 */
+  border: none;
+  z-index: 2; /* iframe 在第二層 */
+  display: none; /* 預設隱藏 */
+}
+
+/* Sketch.js 動畫層 */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* 動畫在最底層 */
+}

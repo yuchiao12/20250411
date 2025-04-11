@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script>
+      // JavaScript 控制 iframe 顯示與隱藏
+      function toggleIframe(target) {
+        const iframe = document.getElementById('iframe-display');
+        if (target === 'home') {
+          iframe.style.display = 'none'; // 隱藏 iframe
+        } else {
+          iframe.style.display = 'block'; // 顯示 iframe
+        }
+      }
+
+      // 控制選單顯示與隱藏
+      document.addEventListener('mousemove', (event) => {
+        const menu = document.querySelector('.menu');
+        if (event.clientY < 250) {
+          menu.style.top = '10px'; // 顯示選單
+          menu.style.opacity = '1';
+        } else {
+          menu.style.top = '-50px'; // 隱藏選單
+          menu.style.opacity = '0';
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- 選單 -->
+    <ul class="menu">
+      <li><a href="#home" onclick="toggleIframe('home')">首頁</a></li>
+      <li><a href="#about" onclick="toggleIframe('about')">自我介紹</a></li>
+      <li class="submenu">
+        <a href="#portfolio" onclick="toggleIframe('portfolio')">作品集</a>
+        <ul class="submenu-items">
+          <li><a href="https://hackmd.io/@m54DzLTORL2G4e3BsesC9g/rySSO9Qake" target="iframe-display" onclick="toggleIframe('portfolio')">第一周</a></li>
+          <li><a href="https://hackmd.io/@m54DzLTORL2G4e3BsesC9g/rySSO9Qake" target="iframe-display" onclick="toggleIframe('portfolio')">第二周</a></li>
+          <li><a href="https://hackmd.io/@m54DzLTORL2G4e3BsesC9g/rySSO9Qake" target="iframe-display" onclick="toggleIframe('portfolio')">第三周</a></li>
+          <li><a href="https://hackmd.io/@m54DzLTORL2G4e3BsesC9g/rySSO9Qake" target="iframe-display" onclick="toggleIframe('portfolio')">第四周</a></li>
+        </ul>
+      </li>
+      <li><a href="#report" onclick="toggleIframe('report')">測驗卷</a></li>
+      <li><a href="#videos" onclick="toggleIframe('videos')">教學影片</a></li>
+    </ul>
+
+    <!-- iframe 顯示區 -->
+    <iframe id="iframe-display" name="iframe-display" style="display: none;"></iframe>
+
+    <!-- Sketch.js 動畫 -->
+    <script src="sketch.js"></script>
+  </body>
+</html>
